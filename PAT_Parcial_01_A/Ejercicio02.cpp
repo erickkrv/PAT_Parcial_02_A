@@ -1,20 +1,25 @@
 #include "Ejercicio02.h"
 
+#include <vector>
+
+
 int Ejercicio02::countStudents(vector<char>* students, vector<char>* sandwiches)
 {
-	while (!students->empty() && !sandwiches->empty())
-	{
-		if (students[0] == sandwiches[0])
-		{
-			students->erase(students->begin());
-			sandwiches->erase(sandwiches->begin());
+	if (students->empty() || sandwiches->empty()) {
+		return students->size();
+	}
+	int i = 0;
+	int j = 0;
+	while (i < students->size() && j < sandwiches->size()) {
+		if (students->at(i) == sandwiches->at(j)) {
+			students->erase(students->begin() + i);
+			sandwiches->erase(sandwiches->begin() + j);
+			i = 0;
+			j = 0;
 		}
-		else
-		{
-			students->push_back(students[0]); 
-			students->erase(students->begin()); 
-
+		else {
+			i++;
 		}
 	}
-	return students->size(); 
+	return students->size();
 }
