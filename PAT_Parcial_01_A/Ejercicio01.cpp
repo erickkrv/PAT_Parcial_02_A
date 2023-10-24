@@ -23,4 +23,5 @@ Node<char>* Ejercicio01::remove(Node<char>* head, char value)
         }
     }
     return head;
+
 }
