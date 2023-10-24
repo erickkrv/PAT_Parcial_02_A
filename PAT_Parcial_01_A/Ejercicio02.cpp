@@ -11,7 +11,7 @@ int Ejercicio02::countStudents(vector<char>* students, vector<char>* sandwiches)
 		}
 		else
 		{
-			students->push_back(students[0]); 
+			students->push_back((*students)[0]); 
 			students->erase(students->begin()); 
 
 		}
